@@ -8,11 +8,11 @@ class Calculadora():
       self.operando1 = operando1
       self.operando2 = operando2
 
+    def suma (self):
+        
+
   if __name__ == "__main__":
     objeto = Clase("pepe")
-
-
-
 
 
 
