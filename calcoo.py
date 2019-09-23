@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-class Calculadora():
+import sys
+class Calculadora:
 
     def __init__(self, operador, operando1, operando2):
       "Esto es el método iniciliazador"
@@ -9,21 +10,31 @@ class Calculadora():
       self.operando2 = operando2
 
     def suma (self):
-        
+        return self.operando1 + self.operando2
 
-  if __name__ == "__main__":
-    objeto = Clase("pepe")
+    def resta (self):
+        return self.operando1 - self.operando2
 
+    def operar (self):
 
-
-class CalculadoraHija(ClaseMadre):
-  "Esto es un ejemplo de clase que hereda de ClaseMadre"
-
-  def __init__(self, valor):
-    "Esto es el método iniciliazador"
-    self.atributo = valor
+         if self.operador == "suma":
+             return self.suma
+         elif self.operador == "resta":
+             return self.resta
+         else:
+             sys.exit('Operación sólo puede ser sumar o restar.')
 
 if __name__ == "__main__":
-  objeto = Clase("pepe") # Creo un objeto de la clase Clase
-                         # y le paso el valor pepe para su
-                         # atributo en la inicialización
+     try:
+        operando1 = int(sys.argv[1])
+        operando2 = int(sys.argv[3])
+     except ValueError:
+        sys.exit("Error: Non numerical parameters")
+     operador = (sys.argv[2])
+     Calc = Calculadora(operador,operando1,operando2)
+     print(Calc.operador)
+     print(Calc.operando1)
+     print(Calc.operando2)
+     print(Calc.resta)
+     resultado = (Calc.operar)
+     print(resultado)
